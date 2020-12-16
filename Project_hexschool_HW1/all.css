@@ -1,0 +1,218 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face{
+    font-family: 'SF Pro Text, Regular';
+    src: url('/font_family/FontsFree-Net-SFProText-Regular.ttf');
+}
+@font-face{
+    font-family: 'SF Pro Text, Semibold';
+    src: url('/font_family/FontsFree-Net-SFProText-Semibold.ttf');
+}
+@font-face{
+    font-family: 'SF Pro Text, Light';
+    src: url('/font_family/FontsFree-Net-SFProText-Light.ttf');
+}
+@font-face{
+    font-family: '蘋方-繁, Medium';
+    src: url('/font_family/PingFang-TC-Regular-2.otf');
+}
+@font-face{
+    font-family: '蘋方-繁, Light';
+    src: url('/font_family/PingFang-SC-Light-2.otf');
+}
+/*--------------------------*/
+.wrap{
+    margin-left: auto;
+    margin-right: auto;
+}
+.container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "微軟正黑體";
+}
+.container h2{
+    font-size: 80px;
+    line-height: 95px;
+    font-family: "SF Pro Text, Regular";
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid black;
+}
+.container .self_img{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.container_intro_title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.intro_chinese{
+    font-size: 32px;
+    font-weight: 600;
+    margin-right: 10px;
+    font-family: '蘋方-繁, Medium';
+}
+.intro_english{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'SF Pro Text, Semibold';
+}
+.profile_list{
+    font-size: 24px;
+    line-height: 36px;
+    padding-top: 20px;
+    font-family: '蘋方-繁, Light';
+}
+.Education{
+    margin-top: 60px;
+}
+.Skills{
+    margin-top: 60px;
+    background: #415165;
+    color: white;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 20px;
+}
+.Skills_intro_title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+.Skills_intro_chinese{
+    font-size: 32px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.Skills_intro_english{
+    font-size: 32px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.Skills_list{
+    color: #E5EBE5;
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 36px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(229, 235, 229, 0.3);
+}
+.Work_Experience{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.Work_Experience .paragraph{
+    margin-top: 5px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 620px;
+    font-family: '蘋方-繁, Light';
+}
+.Work_Experience_achieve{
+    font-family: '蘋方-繁, Medium';
+    font-size: 24px;
+    line-height: 72px;
+}
+.Work_Experience_list{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(229, 235, 229, 0.3);
+}
+.Work_Experience img{
+    display: block;
+}
+/*--------------------------*/
+.footer{
+    background: #415165;
+    color: #FFFFFF;
+    
+    font-family: "微軟正黑體";
+}
+.footer-inner{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.footer-inner h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFFFFF;
+    text-align: center;
+}
+.footer-list{
+    margin-top: 20px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 24px;
+}
+.footer-list li{
+    margin-bottom: 10px;
+    font-family: 'SF Pro Text, Light';
+}
+.img-section{
+    margin-top:20px;
+    display: flex;
+    justify-content: center;
+}
+.img-section a{
+    display: block;
+}
+.img-section img{
+    width: 48px;
+    height: 48px;
+}
+.insta{
+    margin-left: 20px;
+    margin-right: 20px;
+}
