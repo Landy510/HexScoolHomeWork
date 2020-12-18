@@ -62,17 +62,13 @@ table {
     src: url('/font_family/PingFang-SC-Light-2.otf');
 }
 /*--------------------------*/
-.wrap{
-    margin-left: auto;
-    margin-right: auto;
-}
 .container{
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
     font-family: "微軟正黑體";
 }
-.container h2{
+.container h1{
     font-size: 80px;
     line-height: 95px;
     font-family: "SF Pro Text, Regular";
@@ -101,16 +97,22 @@ table {
     font-weight: 600;
     font-family: 'SF Pro Text, Semibold';
 }
+.intro_english_title_red{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'SF Pro Text, Semibold';
+    color:#A00404;
+}
 .profile_list{
     font-size: 24px;
     line-height: 36px;
     padding-top: 20px;
     font-family: '蘋方-繁, Light';
 }
-.Education{
+.education{
     margin-top: 60px;
 }
-.Skills{
+.skills{
     margin-top: 60px;
     background: #415165;
     color: white;
@@ -118,23 +120,13 @@ table {
     padding-left: 100px;
     padding-bottom: 20px;
 }
-.Skills_intro_title{
+.skills_intro_title{
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid white;
     text-align: center;
 }
-.Skills_intro_chinese{
-    font-size: 32px;
-    font-weight: 600;
-    margin-right: 10px;
-}
-.Skills_intro_english{
-    font-size: 32px;
-    font-weight: 600;
-    margin-right: 10px;
-}
-.Skills_list{
+.skills_list{
     color: #E5EBE5;
     width: 210px;
     margin-left: auto;
@@ -145,29 +137,35 @@ table {
     padding-left: 20px;
     border-left: 1px solid rgba(229, 235, 229, 0.3);
 }
-.Work_Experience{
+.work_Experience{
     margin-top: 60px;
     margin-bottom: 60px;
 }
-.Work_Experience .paragraph{
+.work_Experience .paragraph{
     margin-top: 5px;
     font-size: 20px;
     line-height: 30px;
     width: 620px;
     font-family: '蘋方-繁, Light';
 }
-.Work_Experience_achieve{
+.work_Experience_achieve{
     font-family: '蘋方-繁, Medium';
     font-size: 24px;
     line-height: 72px;
 }
-.Work_Experience_list{
+.work_Experience_achieve_intern{
+    line-height: 36px;
+}
+.work_Experience_achieve_coffee{
+    font-family: '蘋方-繁, Light';
+}
+.work_Experience_list{
     margin-top: 10px;
     margin-left: 10px;
     padding-left: 20px;
-    border-left: 1px solid rgba(229, 235, 229, 0.3);
+    border-left: 1px solid #96A9C4;
 }
-.Work_Experience img{
+.work_Experience img{
     display: block;
 }
 /*--------------------------*/
@@ -184,7 +182,7 @@ table {
     padding-bottom: 10px;
     padding-top: 10px;
 }
-.footer-inner h3{
+.footer-inner h2{
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #FFFFFF;
@@ -215,4 +213,35 @@ table {
 .insta{
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.footer-list-product-link{
+    font-family: '蘋方-繁, Light';  
+}
+.footer-list .product_link a{
+    text-decoration: none;
+    color: white;
+}
+.footer-list .product_link a:hover{
+    color: #A00404;
+}
+.footer-list .mail a{
+    text-decoration: none;
+    color: white;
+}
+.footer-list .mail a:hover{
+    color: #A00404;
+}
+.footer-list .phone a{
+    text-decoration: none;
+    color: white;
+}
+.footer-list .phone a:hover{
+    color: #A00404;
+}
+.mr_bottom{
+    margin-bottom: 20px;
+}
+.simtree_img{
+    margin-bottom: 10px;
 }
