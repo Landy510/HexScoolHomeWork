@@ -1,0 +1,318 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: '微軟正黑體';
+	color: #3F5D45;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*--------------------------------------------------*/
+.container{
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header{
+    padding-bottom: 10px;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 200px;
+}
+.nav-option{
+    display: flex;
+    
+}
+.nav-option li a{
+	color: #3F5D45;
+	display: block;
+	text-decoration: none;
+	padding: 30px;
+	font-weight: 600;
+}
+.nav-option li a:hover{
+	background: #3F5D45;
+	color: white;
+}
+.banner{
+	background-image: url('https://upload.cc/i1/2020/12/16/A37fZY.jpg');
+	background-position: center center; 
+	background-size: cover;
+	height: 496px;
+}
+.banner-solgan{
+	width: 90px;
+	position: relative;
+	right: -840px;
+	top: 10px;
+}
+
+/*--------------------------------------------------*/
+.product{
+	margin-top: 20px;
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+.menu{
+	width: 30%;
+	font-weight: 800;
+}
+.menu li{
+	border: 1px solid #EAF0ED;
+}
+.product .category{
+	background: #3F5D45;
+	color: white;
+	padding: 20px;
+	font-size: 24px;
+}
+.product .all_dessert{
+	background: #EAF0ED;
+}
+.menu li a{
+	color: #3F5D45;
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 24px;
+}
+.menu li a:hover{
+	background: #EAF0ED;
+}
+.product-section{
+	width: 68%;
+}
+.product-list{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.product-list li{
+	position: relative;
+	width: 48%;
+}
+.product-list-li{
+	margin-bottom: 20px;
+}
+.product-list-img{
+	height: 315px;
+	background-position: center center;
+	background-size: cover;
+}
+.product-intro{
+	display: flex;
+	
+}
+.product-intro li{
+	width: 50%;
+	border: 1px solid #EAF0ED;
+	font-size: 20px;
+	padding: 15px;
+	text-align: center;
+}
+.product-intro-btn{
+	display: block;
+	text-decoration: none;
+	color: #3F5D45;
+	padding: 20px;
+	font-size: 24px;
+	text-align: center;
+	background: #EAF0ED;
+	font-weight: 800;
+}
+.product-intro-btn:hover{
+	color: white;
+	background:  #3F5D45;
+}
+.product-list-li-slogan{
+	position: absolute;
+	left: 10px;
+	writing-mode: vertical-lr;
+	letter-spacing: 5px;
+	background: #3F5D45;
+	color: white;
+	font-weight: 600;
+	padding: 10px;
+	font-size: 16px;
+}
+.product-list-li-heart{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.product-list-pagination{
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	width: 90%;
+}
+.product-list-pagination a{
+	display: block;
+	padding: 20px;
+	border: 1px solid #EAF0ED;
+	text-decoration: none;
+	color: #3F5D45;
+}
+.product-list-pagination a:hover{
+	color: white;
+	background: #3F5D45;
+}
+
+/*-----------------------------------------------------*/
+.footer{
+	width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.footer-search{
+	background: #3F5D45;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 25px;
+}
+.footer-search-logo{
+	display: flex;
+	align-items: center;
+	width: 30%;
+	color: white;
+}
+.footer-search-logo span{
+	font-size: 24px;
+	margin-left: 20px;
+}
+.footer-search-frame{
+	width: 40%;
+	display: flex;
+}
+.input-section{
+	background: #EAF0ED;
+}
+.input-section{
+	display: flex;
+	width: 90%;
+}
+.input-section .input-icon{
+	display: flex;
+	align-items: center;
+	padding-left: 3px;
+	padding-top: 2px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.input-content-section{
+	width: 100%;
+	margin-right: 5px;
+}
+.input-content{
+	height: 50px;
+	width: 100%;
+	border: 0px;
+	outline: none;  /*去除當點擊input欄位時，會出現的外框*/
+	background: #EAF0ED;
+	font-size: 45px;
+}
+.input-button{
+	border: 0px;
+	width: 15%;
+	background: #FFE180;
+}
+.input-button:hover{
+	color: white;
+	cursor: pointer;
+}
+
+.footer-bottom-area{
+	display: flex;
+	justify-content: space-around;
+	padding: 25px;
+}
+.fanspage-link{
+	margin-top: 20px;
+	display: flex;
+}
+.footer-company-contact{
+	line-height: 30px;
+}
+.footer-slogon{
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.footer-slogon .mail-option{
+	text-decoration: none;
+	color: #3F5D45;
+}
+.footer-slogon .mail-option:hover{
+	color: red;
+}
+.footer-slogon-img{
+	width: 170px;
+}
+.footer-slogon .line-option{
+	display: block;
+	margin-right: 10px;
+	width: 32px;
+	height: 32px;
+}
+.footer-slogon .facebook-option{
+	display: block;
+	width: 32px;
+	height: 32px;
+}
+
+.footer-copyright{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 40%;
+}
+.footer-copyright-slogon{
+	width: 60px;
+}
+.footer-copyright .paragraph{
+	margin-top: 20px;
+}
