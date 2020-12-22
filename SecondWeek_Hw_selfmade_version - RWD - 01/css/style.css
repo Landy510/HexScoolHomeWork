@@ -1,0 +1,504 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: '微軟正黑體';
+	;
+}
+ol, ul {
+	list-style: none;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*--------------------------------------------------*/
+
+.container{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header{
+	background: yellow;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: black;
+}
+.logo span{
+	margin-left: 10px;
+	font-size: 25px;
+	line-height: 25px;
+	font-weight: 600;
+}
+.logo img{
+	height: 70px;
+}
+.nav-option{
+    display: flex;
+    
+}
+.nav-option li a{
+	display: block;
+	color: black;
+	text-decoration: none;
+	padding: 30px;
+	font-weight: 600;
+}
+.nav-option li a:hover{
+	background: black;
+	color: white;
+}
+.banner{
+	background-image: url('/img/victor-freitas-vqDAUejnwKw-unsplash.jpg');
+	background-position: center center; 
+	background-size: cover;
+	height: 496px;
+	position: relative;
+}
+.banner-solgan{
+	width: 90px;
+	position: absolute;
+	right: 40px;
+	top: 20px;
+	color: white;
+	writing-mode: vertical-rl;
+	font-size: 50px;
+	letter-spacing: 10px;
+}
+.banner-solgan span{
+	margin-top: 20px;
+}
+/*---RWD header的PC版型----*/
+.rwd-cart-btn{
+	display: none;
+	text-decoration: none;
+	color: black;
+}
+.rwd-hamburger-btn{
+	display: none;
+	text-decoration: none;
+	color: black;
+}
+.rwd-nav-option{
+	display: none;
+}
+/*--------------------------------------------------*/
+@media(max-width:768px){
+	.rwd-cart-btn{
+		display: block;
+		padding: 20px;
+	}
+	.rwd-hamburger-btn{
+		display: block;
+		padding: 20px;
+	}
+	.nav-option{
+		display: none;
+	}
+	.navigation h1{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.navigation h1 span{
+		display: none;
+	}
+	.show-menu .rwd-nav-option{
+		background: white;
+		opacity: 0.4;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		display: block;
+	}
+	.rwd-nav-option li a{
+		display: block;
+		text-decoration: none;
+		color: black;
+		padding: 10px;
+	}
+}
+/*--------------------------------------------------*/
+.product{
+	margin-top: 20px;
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+.menu{
+	width: 30%;
+	font-weight: 800;
+}
+.menu li{
+	border: 1px solid rgb(240, 233, 233);
+}
+.product .category{
+	background: black;
+	color: white;
+	padding: 20px;
+	font-size: 24px;
+}
+.product .all_dessert{
+	background:rgb(240, 233, 233);
+}
+.menu li a{
+	color: black;
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 24px;
+}
+.menu li a:hover{
+	background: rgb(240, 233, 233);
+}
+.product-section{
+	width: 68%;
+}
+.product-list{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.product-list li{
+	position: relative;
+	width: 48%;
+}
+.product-list-li{
+	margin-bottom: 20px;
+}
+.product-list-img{
+	height: 315px;
+	background-position: center center;
+	background-size: cover;
+}
+.product-intro{
+	display: flex;
+}
+.product-intro-price{
+	font-weight: 800;
+}
+.product-intro li{
+	width: 50%;
+	border: 1px solid rgb(240, 233, 233);
+	font-size: 20px;
+	padding: 15px;
+	text-align: center;
+}
+.product-intro-btn{
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding: 20px;
+	font-size: 24px;
+	text-align: center;
+	background: yellow;
+	font-weight: 800;
+	transition: all .5s;
+}
+.product-intro-btn:hover{
+	color: white;
+	background:  black;
+}
+.product-list-li-slogan{
+	position: absolute;
+	left: 10px;
+	writing-mode: vertical-lr;
+	letter-spacing: 5px;
+	background: black;
+	color: white;
+	font-weight: 600;
+	padding: 10px;
+	font-size: 16px;
+}
+.product-list-li-heart{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	
+}
+.product-list-li-heart i{
+	color: white;
+}
+.product-list-pagination{
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	width: 90%;
+}
+.product-list-pagination a{
+	display: block;
+	padding: 20px;
+	border: 1px solid  rgb(240, 233, 233);
+	text-decoration: none;
+	color: black;
+}
+.product-list-pagination a:hover{
+	color: black;
+	background:  rgb(240, 233, 233);
+}
+/*-----------------------------------------------------*/
+@media(max-width:768px){
+	.product{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.product-list li{
+		width: 100%;
+	}
+	.product-section{
+		width: 55%;
+	}
+	.product .menu{
+		width: 40%;
+	}
+}
+@media(max-width:568px){
+	.product{
+		display: block;
+	}
+	.product .menu{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+	}
+	.product-section{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+}
+/*-----------------------------------------------------*/
+.footer{
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.footer-search{
+	background: yellow;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 25px;
+}
+.footer-search-logo{
+	display: flex;
+	align-items: center;
+	width: 30%;
+	color: white;
+}
+.footer-search-logo-img{
+	width: 40px;
+	height: 40px;
+}
+.footer-search-logo-subscribe{
+	font-size: 24px;
+	margin-left: 20px;
+	color: black; 
+	font-weight: 600;
+}
+
+.footer-search-frame{
+	width: 40%;
+	display: flex;
+}
+.input-section{
+	background: #EAF0ED;
+}
+.input-section{
+	display: flex;
+	width: 90%;
+}
+.input-section .input-icon{
+	display: flex;
+	align-items: center;
+	padding-left: 3px;
+	padding-top: 2px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.input-content-section{
+	width: 100%;
+	margin-right: 5px;
+}
+.input-content{
+	height: 50px;
+	width: 100%;
+	border: 0px;
+	outline: none;  /*去除當點擊input欄位時，會出現的外框*/
+	background: #EAF0ED;
+	font-size: 45px;
+}
+.input-button{
+	border: 0px;
+	width: 15%;
+	background: black;
+	color: white;
+}
+.input-button:hover{
+	color: yellow;
+	cursor: pointer;
+}
+
+.footer-bottom-area{
+	display: flex;
+	justify-content: space-around;
+	padding: 25px;
+	background: rgb(240, 233, 233);
+}
+.fanspage-link{
+	margin-top: 20px;
+	display: flex;
+}
+.footer-company-contact{
+	line-height: 30px;
+}
+.footer-slogon{
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.footer-slogon-name{
+	font-size: 30px;
+	font-weight: 600;
+}
+.footer-slogon .mail-option{
+	text-decoration: none;
+	color: #3F5D45;
+}
+.footer-slogon .mail-option:hover{
+	color: red;
+}
+.footer-slogon-img{
+	width: 170px;
+}
+.footer-slogon .line-option{
+	display: block;
+	margin-right: 10px;
+	width: 32px;
+	height: 32px;
+	font-size: 35px;
+	text-decoration: none;
+	color: black;
+}
+.footer-slogon .facebook-option{
+	display: block;
+	width: 32px;
+	height: 32px;
+	font-size: 35px;
+	text-decoration: none;
+	color: black;
+}
+.footer-slogon .line-option:hover{
+	opacity: 0.5;
+}
+.footer-slogon .facebook-option:hover{
+	opacity: 0.5;
+}
+.footer-copyright{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 40%;
+}
+.footer-copyright-slogon{
+	width: 60px;
+}
+.footer-copyright .paragraph{
+	margin-top: 20px;
+}
+.footer-copyright-slogon{
+	writing-mode: vertical-rl;
+	font-size: 25px;
+	letter-spacing: 5px;
+	line-height: 30px;
+	font-weight: 600;
+}
+/*-----------------------------------------------------*/
+@media(max-width:568px){
+	.footer-search{
+		display: block;
+	}
+	.footer-search-logo{
+		width: 100%;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+	.footer-search-frame{
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.footer-slogon{
+		width: 50%;
+	}
+	.footer-copyright{
+		width: 50%;
+	}
+	.footer-copyright .paragraph{
+		text-align: right;
+	}
+}
+@media(max-width:380px){
+	.footer-copyright{
+		display: none;
+	}
+	.footer-slogon{
+		width: 100%;
+	}
+	.footer-search-frame{
+		width: 100%;
+	}
+	.footer-search-logo-subscribe{
+		font-size: 20px;
+	}
+}
+
+/*-----------------------------------------------------*/
