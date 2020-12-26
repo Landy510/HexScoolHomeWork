@@ -17,14 +17,17 @@
             position: absolute;
             left: 0;
             right: 0;
+            
             top: 0;
             bottom: 0;
+            
             background: transparent;
             opacity: 0.4;
             z-index: -1;
             display: flex;
             justify-content: center;
             align-items: center;
+            transform: translateY(-100%);  
             transition: all 1s;
         }
         .display-section-word{   
@@ -51,21 +54,25 @@
     a:hover{
         &>.background-img{
             -webkit-filter:blur(0px);  
-            filter:blur(0px);      
+            filter:blur(0px);   
+            transform: scale(1.4); 
+            -webkit-transform: scale(1.4);
+            
         }
         &>.display_section-cover{
-            background: yellow;  
+            background: yellow; 
+            transform: translateY(0%); 
         }
     }
 }
 /*-----------------------------------------------------*/
 @media(max-width:768px){
-    
-}
-@media(max-width: 568px){
     .display_section{
         a{
             width: 33.33%;
+            .display_section-cover{
+                transform: translateY(0%); 
+            }
         }
     }
 }
@@ -79,6 +86,18 @@
         max-width: 940px;
         display: flex;
         flex-direction: row-reverse;
+        justify-content: flex-start;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+        max-height: 420px;
+        font-weight: 600;
+    }
+    .content-section-reverse{
+        max-width: 940px;
+        display: flex;
+        flex-direction: row;
         justify-content: flex-start;
         height: 100%;
         margin-left: auto;
@@ -111,9 +130,72 @@
         margin-bottom: -20px;
     }
 }
+.content-slogon-horizon{
+    margin-bottom: 100px;
+    display: none;
+}
+
 /*-----------------------------------------------------*/
+@media(max-width:768px){   
+    .content{
+        .content-section{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .content-paragraph{
+            letter-spacing: 0rem;
+            line-height: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 20px;    
+        }
+    }
+}
+@media(max-width:680px){
+    .content-slogon-horizon{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 0.5rem;
+        line-height: 3rem;
+        font-weight: 600;
+    } 
+    .content-slogon{
+        display: none;
+    }
+    .content{
+        .content-img{
+            min-height: 250px;
+            width: 100%;
+        }
+        .content-section{
+            padding-left: 0px;
+            padding-right: 0px;
+            flex-direction: column-reverse;        
+        }
+        .content-paragraph{
+            writing-mode: horizontal-tb;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            .first_paragraph{
+                margin-bottom: 10px;
+            }
+        }
+        .content-section-reverse{
+            padding-left: 0px;
+            padding-right: 0px;
+            flex-direction: column-reverse;  
+        }
+    }
+}
+/*-----------------------------------------------------*/
+.middle-section-horizon{
+    display: none;
+}
 .middle-section{
-    margin-top: -100px;
+    margin-top: -150px;
+    margin-bottom: 50px;
   .middle-slogon{
      text-align: center;
      writing-mode: vertical-rl;
@@ -137,8 +219,33 @@
     margin-right: auto;
     margin-left: auto;
     justify-content: space-between;
-    li{
+    .landingpage-product-section-list-li{
         width: 32%;
         position: relative;
     }
 }
+/*-----------------------------------------------------*/
+@media(max-width:768px){
+    .middle-section-horizon{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 0.5rem;
+        line-height: 3rem;
+        font-weight: 600;
+        margin-bottom: 80px;
+    }
+    .middle-section{
+        display: none;
+    }
+    .landingpage-product-section-list{
+        flex-direction: column;
+        align-items: center;
+        .landingpage-product-section-list-li{
+            width: 90%;
+            margin-bottom: 30px;
+        }
+    }
+}
+/*-----------------------------------------------------*/
