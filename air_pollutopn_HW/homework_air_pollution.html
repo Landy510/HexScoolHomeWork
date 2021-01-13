@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>作業練習：元件變換</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/regular.js" integrity="sha384-t7yHmUlwFrLxHXNLstawVRBMeSLcXTbQ5hsd0ifzwGtN7ZF7RZ8ppM7Ldinuoiif" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>    <script src="/javascripts/vendor.js"></script>
+
+  </head>
+  
+  <body class="bg-lighter">
+    
+
+<div id="app">
+  <div class="container">
+    <select name="" id="" class="form-control mb-3" @click="getData" @change="changelocation" v-model="selected">
+      <option value="" disabled>--- 請選擇城市　---</option>
+      <option :value="item" v-for="(item, key) in location" :key="key">{{item}}</option>
+      
+    </select>
+    <h4>關注城市</h4>
+    <div class="row">
+      <div class="col-md-4" v-for="(item, key) in stared" :key="item.SiteName">
+        <card :info="item" @increment="pushToStared"></card>
+      </div>
+    </div>
+  
+    <hr>
+    <div class="row">
+      <div class="col-md-4" v-for="(item, key) in filterData" :key="item.SiteName">
+        <card :info="item" @increment="pushToStared"></card>
+      </div>
+    </div>
+
+  </div>
+   
+</div>
+
+
+
+
+<script type="text/x-template" id="cardtemplate">
+    <div class="card mb-2"  :class="whichStatus">
+      <div class="card-header">{{info.County}}-{{info.SiteName}}
+        <a href="#" class="float-right" @click.prevent="incrementCounter"><i :class="whichStar"></i></a>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled">
+          <li>AQI 指數: {{info.AQI}}</li>
+          <li>PM2.5: {{info["PM2.5"]}}</li>
+          <li>說明:{{info.Status}}</li>
+        </ul>
+        {{info.PublishTime}}
+      </div>
+    </div>
+  
+</script>
+
+<script>
+// API 來源
+// https://opendata.epa.gov.tw/Data/Contents/AQI/
+Vue.component('card',{
+  props:['info'],
+  template:'#cardtemplate',
+  data: function(){
+    let vm = this;
+    return{
+      self_info: vm.info
+    }
+  },
+  methods:{
+    incrementCounter:function(){
+      let vm = this;
+      vm.$emit('increment', vm.self_info);
+    } 
+  },
+  computed:{
+    whichStar:function(){
+      let vm = this;
+      return vm.info.beStared?'fas fa-star':'far fa-star';
+    },
+    whichStatus:function(){
+      let vm = this;
+      if(vm.info.Status==='良好'){
+        return 'status-aqi1';
+      }else if(vm.info.Status==='普通'){
+        return 'status-aqi2';
+      }else if(vm.info.Status==='對敏感族群不健康'){
+        return 'status-aqi3';
+      }else if(vm.info.Status==='對所有族群不健康'){
+        return 'status-aqi4';
+      }else if(vm.info.Status==='非常不健康'){
+        return 'status-aqi5';
+      } else{
+        return 'status-aqi6';
+      }
+    }
+  }
+})
+var app = new Vue({
+  el: '#app',
+  data: {
+    data: [],
+    location: [],
+    stared: [],
+    filter: '',
+    selected: ''
+    
+  },
+  // 請在此撰寫 JavaScript
+  methods: {
+    getData() {
+      const vm = this;
+      const api = 'http://opendata2.epa.gov.tw/AQI.json';
+      let temp_location = [];
+      // 使用 jQuery ajax
+      $.get(api).then(function( response ) {
+        vm.data = response;
+        vm.data.forEach(item => {
+          item.beStared=false;
+          vm.location.push(item.County); 
+        });
+        
+        
+        vm.location.forEach(item=>{
+          if((temp_location.indexOf(item))===-1){
+            temp_location.push(item)
+          }  
+        })
+        vm.location = temp_location;
+        
+      });
+      
+    },
+    pushToStared: function(item){
+      let vm = this;
+      let hasElement = false;
+      vm.stared = vm.stared || [];
+      vm.stared.forEach((el,key)=>{
+        if(el.SiteName === item.SiteName){
+          item.beStared = false;
+          vm.stared.splice(key, 1);
+          hasElement = true;
+          return;
+        }
+      })
+      if(!hasElement){
+        item.beStared = true;
+        vm.stared.push(item);
+      } 
+      let record_data = JSON.stringify(vm.stared);
+      localStorage.setItem('StaredData', record_data);
+      
+    },
+    changelocation:function(){
+      let vm = this;
+      let temp_array = [];
+      vm.data.forEach((el)=>{
+        if(vm.selected === el.County){
+          temp_array.push(el);
+        };
+      })
+      vm.selected=vm.selected;
+      vm.data = temp_array;
+    }
+  },
+  computed:{
+    filterData:function(){
+      let vm = this;
+      
+      vm.stared = vm.stared || [];
+      if(vm.selected ===''){
+        if(vm.stared.length!==0){
+          let stareSitemName = [];
+          let feedbackArray = [];
+          vm.stared.forEach(el=>{
+            stareSitemName.push(el.SiteName);
+          })
+          feedbackArray = vm.data.filter(function(item){
+            return stareSitemName.indexOf(item.SiteName)===-1;
+          })
+          return feedbackArray;
+        }
+        return vm.data;
+      } else {
+        
+        let selectData = [];
+        selectData =  vm.data.filter(el => el.County === vm.selected);
+        if(vm.stared.length!==0){
+          let staredSitName = [];
+          let feedbackArray = [];
+          vm.stared.forEach(el=>{
+            staredSitName.push(el.SiteName);
+          })
+          feedbackArray = selectData.filter(function(item){
+            return staredSitName.indexOf(item.SiteName)===-1
+          })
+          
+          return feedbackArray;
+        } 
+
+        
+        return selectData;
+      }
+      
+    },
+  },
+  created() { // 若要對資料做操作，必須要在created之後才能操作。
+    let output_data = localStorage.getItem('StaredData');
+    this.stared = JSON.parse(output_data);
+  },
+  
+});
+</script>
+<!-- 
+狀態對應表
+'status-aqi1' '良好',
+'status-aqi2' '普通',
+'status-aqi3' '對敏感族群不健康',
+'status-aqi4' '對所有族群不健康',
+'status-aqi5' '非常不健康',
+'status-aqi6' '危害'
+--> 
+<style>
+.status-aqi1{
+  background-color: greenyellow;
+}
+.status-aqi2 {
+  background-color: #ffff00;
+}
+.status-aqi3 {
+  background-color: #ff7e00;
+}
+.status-aqi4 {
+  background-color: #ff0000;
+}
+.status-aqi5 {
+  background-color: #8f3f97;
+}
+.status-aqi6 {
+  background-color: #7e0023;
+}
+.beStared{
+  background-color: black;
+}
+</style>
+
+ 
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
